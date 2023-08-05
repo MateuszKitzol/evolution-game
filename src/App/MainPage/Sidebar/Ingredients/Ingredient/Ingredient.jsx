@@ -1,8 +1,10 @@
 import React, { UseContext } from 'react';
 import * as S from './styles';
 
-export const Ingredients = () => {
+export const Ingredient = () => {
     return(
-        <S.Ingredients/>
+        <S.Ingredient>
+            
+        </S.Ingredient>
     )
 }
