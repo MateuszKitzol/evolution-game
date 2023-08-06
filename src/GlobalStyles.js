@@ -1,6 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
  
-export const GlobalStyle = createGlobalStyle`
+const GlobalStyle = createGlobalStyle`
     @import url("https://fonts.googleapis.com/css2?family=Anuphan:wght@300&family=Hind+Guntur:wght@300;400;500;700&display=swap");
 
     //CSS reset
@@ -55,3 +55,5 @@ export const GlobalStyle = createGlobalStyle`
         font-family: 'Changa', sans-serif;
     }
 `;
+
+export default GlobalStyle;

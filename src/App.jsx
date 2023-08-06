@@ -1,12 +1,12 @@
 import React, { Fragment, useState } from 'react';
-import { MainPage } from './App/MainPage/styles';
+import { MainPage } from './App/MainPage/MainPage.jsx';
 import GlobalStyle from './GlobalStyles';
 
 function App() {
 
   return (
     <Fragment>
-      <GlobalStyle />
+      <GlobalStyle/>
       <MainPage/>
     </Fragment>
   )

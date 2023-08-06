@@ -6,4 +6,5 @@ export const Ingredients = styled.div`
     flex-flow: row wrap;
     justify-content: center;
     align-content: flex-start;
+    padding: 2.5vh;
 `;
