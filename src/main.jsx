@@ -5,7 +5,7 @@ import './index.css'
 import { MainPage } from './App/MainPage/MainPage.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
+  //<React.StrictMode>
     <App/>
-  </React.StrictMode>,
+  //</React.StrictMode>,
 )

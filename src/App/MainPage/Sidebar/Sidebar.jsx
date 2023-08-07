@@ -1,12 +1,12 @@
 import React, { UseContext } from 'react';
-import { Ingredients } from './Ingredients/Ingredients.jsx';
+import { Items } from './Items/Items.jsx';
 import * as S from './styles';
 
-export const Sidebar = () => {
+export const Sidebar = ({stateChanger, itemsAmounts}) => {
     return(
         <S.Sidebar>
             Evolution Game
-            <Ingredients/>
+            <Items stateChanger={stateChanger} itemsAmounts={itemsAmounts}/>
         </S.Sidebar>
     )
 }
