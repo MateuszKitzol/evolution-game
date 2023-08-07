@@ -3,9 +3,6 @@ export const listOfIngredients = [
     'neutron',
     'proton',
     'carbon',
-    'electron',
-    'neutron',
-    'proton',
     'hydrogen',
     'nitrogen',
     'oxygen',
@@ -13,5 +10,8 @@ export const listOfIngredients = [
     'cytosine',
     'guanine',
     'thymine',
-    'dna'
+    'dna',
+    'undiscovered',
+    'undiscovered',
+    'undiscovered'
 ];

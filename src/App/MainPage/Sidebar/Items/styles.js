@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Ingredients = styled.div`
+export const Items = styled.div`
     display: flex;
     height: 80vh;
     flex-flow: row wrap;

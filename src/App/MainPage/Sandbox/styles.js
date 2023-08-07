@@ -6,5 +6,7 @@ export const Sandbox = styled.div`
     background-size: cover;
     background-blend-mode: lighten; 
     -webkit-filter: blur(0.5px); /* Safari 6.0 - 9.0 */
-      //filter: blur(0.8px);
+    filter: blur(0.5px);
+    position: relative;
+    z-index: 1;
 `;
