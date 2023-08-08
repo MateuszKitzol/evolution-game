@@ -14,7 +14,7 @@ export const Item = styled.div`
 
     &:hover {
         cursor: ${(props) => props.name === 'undiscovered' ? 'default' : 'pointer'};
-    }
+    } 
 
     &:hover:after {
         border: 2px solid purple;
