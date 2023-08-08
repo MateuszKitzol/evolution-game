@@ -1,4 +1,26 @@
-export const recipes = {
+const recipesToArr = (obj) => {
+    let arr = []
+
+    for (const prop in obj)
+        arr.push({item: prop, recipe: recipeToArr(obj[prop])});
+
+    return arr;
+}
+
+
+const recipeToArr = obj => {
+    let arr = [];
+    
+    for(const item in obj){
+        for(let i = 0; i < obj[item]; i++){
+            arr.push(item.toString());
+        }
+    }
+
+    return arr.sort();
+}
+
+export const recipesAsObj = {
     //Chemical elements
     carbon: {
         electron: 6,
@@ -54,3 +76,7 @@ export const recipes = {
         thymine: 1
     }
 }
+
+
+
+export const recipesAsArr = recipesToArr(recipesAsObj);

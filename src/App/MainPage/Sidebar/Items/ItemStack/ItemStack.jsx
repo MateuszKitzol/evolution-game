@@ -2,7 +2,7 @@ import React, { useState, UseContext } from 'react';
 import { Item } from './Item/Item.jsx';
 import * as S from './styles.js'
 
-export const ItemStack = ({name, stateChanger}) => {
+export const ItemStack = ({name, stateChanger, discoveredItems}) => {
 
     return (
         <S.ItemStack>

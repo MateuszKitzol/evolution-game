@@ -15,3 +15,9 @@ export const listOfItems = [
     'undiscovered',
     'undiscovered'
 ];
+
+export const listOfInitialItems = [
+    'electron',
+    'neutron',
+    'proton'
+]
