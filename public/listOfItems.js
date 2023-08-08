@@ -1,4 +1,4 @@
-export const listOfIngredients = [
+export const listOfItems = [
     'electron',
     'neutron',
     'proton',
@@ -15,3 +15,9 @@ export const listOfIngredients = [
     'undiscovered',
     'undiscovered'
 ];
+
+export const listOfInitialItems = [
+    'electron',
+    'neutron',
+    'proton'
+]

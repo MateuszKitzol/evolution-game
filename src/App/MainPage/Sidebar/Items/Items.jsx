@@ -2,16 +2,14 @@ import React, { useState, UseContext } from 'react';
 import { ItemStack } from './ItemStack/ItemStack.jsx';
 import * as S from './styles.js'
 
-export const Items = ({stateChanger, itemsAmounts}) => {
-
-    console.log(itemsAmounts);
+export const Items = ({stateChanger, itemsAmounts, discoveredItems}) => {
 
     return (
         <S.Items>
-            {itemsAmounts.map((item, index) => <ItemStack name={item.name} 
-                                                          index={index}
-                                                          stateChanger={stateChanger}
-                                                          itemsAmounts={itemsAmounts}/>)}
+            {discoveredItems.map((item, index) => <ItemStack name={item.discovered ? item.name : 'undiscovered'} 
+                                                             index={index}
+                                                             stateChanger={stateChanger}
+                                                             discoveredItems={discoveredItems}/>)}
         </S.Items>
     )
 }

@@ -9,15 +9,11 @@ export const Item = styled.div`
     max-width: 60px;
     min-height: 60px;
     max-height: 60px;
-    //margin: 0.75vh;
-    //position: ${(props) => {return props.sidebar ? 'static' : 'absolute'}};
-    //top: ${(props) => {return props.sidebar ? 0 : `${props.y}px`}};
-    //left: ${(props) => {return props.sidebar ? 0 : `${props.x}px`}};
     position: absolute;
     z-index: 2;
 
     &:hover {
-        cursor: pointer;
+        cursor: ${(props) => props.name === 'undiscovered' ? 'default' : 'pointer'};
     }
 
     &:hover:after {
@@ -26,7 +22,7 @@ export const Item = styled.div`
         color: black;
         background-color: white;
         content: '${(props) => props.name}';
-        cursor: pointer;
+        cursor: ${(props) => props.name === 'undiscovered' ? 'default' : 'pointer'} ;
         font-size: 15px;
         position: relative;
         margin: 20px;
