@@ -1,4 +1,4 @@
-export const listOfIngredients = [
+export const listOfItems = [
     'electron',
     'neutron',
     'proton',
