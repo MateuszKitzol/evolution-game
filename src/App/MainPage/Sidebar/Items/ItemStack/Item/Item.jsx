@@ -4,13 +4,13 @@ import Draggable from 'react-draggable';
 
 
 
-const getImagePath = (name) => {
+export const getImagePath = (name) => {
     return `/public/itemsImages/${name}.jpg`;
 };
 
 
 
-export const Item = ({ name, stateChanger}) => {
+export const Item = ({ name, stateChanger, }) => {
     const[triggered, setTriggered] = useState(false);
 
     const path = getImagePath(name);
@@ -32,7 +32,7 @@ export const Item = ({ name, stateChanger}) => {
     
     if(name != 'undiscovered'){
         return(
-            <Draggable onStart={onMouseUpEventHandler}>
+            <Draggable onStop={onMouseUpEventHandler}>
                 <S.Item path={path} name={name}/>
             </Draggable>
         );
