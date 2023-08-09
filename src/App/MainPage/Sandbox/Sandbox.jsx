@@ -14,7 +14,7 @@ const itemsAmountsToRecipeArr = (arr) => {
     let newArr = [];
 
     for (let i = 0; i < arr.length; i++)
-        for(let j = 0; j < arr[i].amount; i++)
+        for(let j = 0; j < arr[i].amount; j++)
             newArr.push(arr[i].name);
 
     return newArr.sort();
@@ -32,6 +32,8 @@ export const Sandbox = ({discoveredItemsStateChanger, newDiscoveryStateChanger, 
             let discoveryName = discovery.item;
 
             if(!discoveredItems.indexOf(discoveryName).discovered){
+                console.log(composition);
+
                 console.log('x');
                 discoveredItemsStateChanger(discoveries =>
                     discoveries.map(obj => {

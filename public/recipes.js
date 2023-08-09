@@ -23,7 +23,7 @@ const recipeToArr = obj => {
 export const recipesAsObj = {
     //Chemical elements
     carbon: {
-        electron: 6,
+        electron: 6, 
         neutron: 6,
         proton: 6
     },

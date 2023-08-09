@@ -16,7 +16,7 @@ export const MainPage = () => {
         <Fragment>
             <S.MainPage>
                 <Sidebar stateChanger={setItemsAmounts} itemsAmounts={itemsAmounts} discoveredItems={discoveredItems}/>
-                <Sandbox stateChanger={setDiscoveredItems} itemsAmounts={itemsAmounts} discoveredItems={discoveredItems} newDiscoveryStateChanger={setNewDiscovery}/>
+                <Sandbox discoveredItemsStateChanger={setDiscoveredItems} itemsAmounts={itemsAmounts} discoveredItems={discoveredItems} newDiscoveryStateChanger={setNewDiscovery}/>
                 {newDiscovery && <NewDiscoveryAlert name={newDiscovery}/>}
             </S.MainPage>
         </Fragment>

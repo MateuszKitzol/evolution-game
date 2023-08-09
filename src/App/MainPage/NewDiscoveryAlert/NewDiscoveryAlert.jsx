@@ -1,14 +1,14 @@
-import React, { useState, UseContext } from 'react';
-import { Item } from './Item/Item.jsx';
+import React, { useState, UseContext, useEffect } from 'react';
+import { getImagePath } from '../Sidebar/Items/ItemStack/Item/Item.jsx';
 import * as S from './styles.js'
 
-export const NewDiscoveryAlert = ({name, stateChanger, discoveredItems}) => {
+export const NewDiscoveryAlert = ({name}) => {
+
+    const path = getImagePath(name);
+    console.log(name);
 
     return (
-        <S.ItemStack>
-            {Array.from(Array(20).keys()).map((index) => <Item key={index}
-                                                               name={name}
-                                                               stateChanger={stateChanger}/>)}
-        </S.ItemStack>
+        
+        <S.NewDiscoveryAlert key={name} name={name} path={path}/>
     )
 }
