@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { DeleteIcon } from './DeleteIcon/styles';
 
 export const Item = styled.div`
     background: url(${(props) => props.path});
@@ -27,5 +28,10 @@ export const Item = styled.div`
         position: relative;
         margin: 20px;
         z-index: 3;
+    }
+
+    &:hover ${DeleteIcon} {
+        cursor: ${(props) => props.name === 'undiscovered' ? 'default' : 'pointer'};
+        visibility: ${(props) => (props.x == 0 && props.y == 0) ? 'hidden' : 'visible'}
     }
 `;

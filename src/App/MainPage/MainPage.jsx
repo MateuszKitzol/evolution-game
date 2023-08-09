@@ -12,6 +12,8 @@ export const MainPage = () => {
                                                                                            discovered: listOfInitialItems.includes(item)}}));
     const[newDiscovery, setNewDiscovery] = useState(null);
 
+    console.log(itemsAmounts);
+
     return(
         <Fragment>
             <S.MainPage>

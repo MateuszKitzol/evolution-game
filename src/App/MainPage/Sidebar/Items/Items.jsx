@@ -8,6 +8,7 @@ export const Items = ({stateChanger, itemsAmounts, discoveredItems}) => {
         <S.Items>
             {discoveredItems.map((item, index) => <ItemStack name={item.discovered ? item.name : 'undiscovered'} 
                                                              index={index}
+                                                             key={index}
                                                              stateChanger={stateChanger}
                                                              discoveredItems={discoveredItems}/>)}
         </S.Items>
