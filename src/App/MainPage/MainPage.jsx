@@ -4,6 +4,7 @@ import { Sandbox } from './Sandbox/Sandbox.jsx';
 import * as S from './styles';
 import { listOfItems, listOfInitialItems } from '../../../public/listOfItems.js';
 import { NewDiscoveryAlert } from './NewDiscoveryAlert/newDiscoveryAlert.jsx';
+import { ButtonSection } from './ButtonSection/ButtonSection.jsx';
 
 export const MainPage = () => {
     const[itemsAmounts, setItemsAmounts] = useState(listOfItems.map(item => {return {name: item,
@@ -20,6 +21,7 @@ export const MainPage = () => {
                 <Sidebar stateChanger={setItemsAmounts} itemsAmounts={itemsAmounts} discoveredItems={discoveredItems}/>
                 <Sandbox discoveredItemsStateChanger={setDiscoveredItems} itemsAmounts={itemsAmounts} discoveredItems={discoveredItems} newDiscoveryStateChanger={setNewDiscovery}/>
                 {newDiscovery && <NewDiscoveryAlert name={newDiscovery}/>}
+                <ButtonSection/>
             </S.MainPage>
         </Fragment>
     );
