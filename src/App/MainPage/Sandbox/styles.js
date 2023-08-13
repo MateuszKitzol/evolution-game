@@ -5,8 +5,7 @@ export const Sandbox = styled.div`
     background: url('public/universe.jpg');
     background-size: cover;
     background-blend-mode: lighten; 
-    -webkit-filter: blur(0.5px); /* Safari 6.0 - 9.0 */
-    filter: blur(0.5px);
+    filter: blur(${(props) => props.$shadowed ? '1px' : '0px'});
     position: relative;
-    z-index: 1;
+    z-index: -1;
 `;

@@ -21,7 +21,8 @@ const itemsAmountsToRecipeArr = (arr) => {
 }
 
 
-export const Sandbox = ({discoveredItemsStateChanger, newDiscoveryStateChanger, itemsAmounts, discoveredItems}) => {
+
+export const Sandbox = ({discoveredItemsStateChanger, newDiscoveryStateChanger, itemsAmounts, discoveredItems, $shadowed}) => {
 
     const[composition, setComposition] = useState(itemsAmountsToRecipeArr(itemsAmounts));
 
@@ -54,7 +55,7 @@ export const Sandbox = ({discoveredItemsStateChanger, newDiscoveryStateChanger, 
     }, [itemsAmounts]);
 
     return(
-        <S.Sandbox>
+        <S.Sandbox $shadowed={$shadowed}>
         </S.Sandbox>
     )
 }

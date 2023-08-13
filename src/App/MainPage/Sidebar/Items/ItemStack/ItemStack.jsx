@@ -2,14 +2,15 @@ import React, { useState, UseContext } from 'react';
 import { Item } from './Item/Item.jsx';
 import * as S from './styles.js'
 
-export const ItemStack = ({name, stateChanger, discoveredItems}) => {
+export const ItemStack = ({name, stateChanger, discoveredItems, $shadowed}) => {
 
     return (
         <S.ItemStack>
             {Array.from(Array(20).keys()).map((index) => <Item key={name + index}
                                                                index={name + index}
                                                                name={name}
-                                                               stateChanger={stateChanger}/>)}
+                                                               stateChanger={stateChanger}
+                                                               $shadowed={$shadowed}/>)}
         </S.ItemStack>
     )
 }
