@@ -10,4 +10,5 @@ export const Sidebar = styled.div`
     padding: 2.5vh;      
     text-align: center;
     grid-template-columns: repeat(4, 1fr);
+    filter: blur(${(props) => props.$shadowed ? '1px' : '0px'});
 `;

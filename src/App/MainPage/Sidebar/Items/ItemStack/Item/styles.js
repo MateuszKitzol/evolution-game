@@ -11,10 +11,11 @@ export const Item = styled.div`
     min-height: 60px;
     max-height: 60px;
     position: absolute;
-    z-index: 2;
+    z-index: 90;
 
     &:hover {
-        cursor: ${(props) => props.name === 'undiscovered' ? 'default' : 'pointer'};
+        cursor: ${(props) => (props.name === 'undiscovered' || props.$shadowed) ? 'default' : 'pointer'};
+        z-index: 100;
     } 
 
     &:hover:after {
@@ -23,15 +24,16 @@ export const Item = styled.div`
         color: black;
         background-color: white;
         content: '${(props) => props.name}';
-        cursor: ${(props) => props.name === 'undiscovered' ? 'default' : 'pointer'} ;
+        cursor: ${(props) => (props.name === 'undiscovered' || props.$shadowed) ? 'default' : 'pointer'};
         font-size: 15px;
         position: relative;
         margin: 20px;
-        z-index: 3;
+        z-index: 100;
+        visibility: ${(props) => props.$shadowed ? 'hidden' : 'visible'};
     }
 
     &:hover ${DeleteIcon} {
         cursor: ${(props) => props.name === 'undiscovered' ? 'default' : 'pointer'};
-        visibility: ${(props) => (props.x == 0 && props.y == 0) ? 'hidden' : 'visible'}
+        visibility: ${(props) => (props.x == 0 && props.y == 0) ? 'hidden' : 'visible'};
     }
 `;

@@ -3,7 +3,7 @@ import * as S from './styles';
 
 
 export const DeleteIcon = ({ index, stateChanger }) => {
-    const path = "public/icons/closeIcon.png";
+    const path = "public/icons/close.png";
 
     return <S.DeleteIcon path={path} key={index} onClick={stateChanger}/>
 }

@@ -2,7 +2,7 @@ import React, { useState, UseContext } from 'react';
 import { ItemStack } from './ItemStack/ItemStack.jsx';
 import * as S from './styles.js'
 
-export const Items = ({stateChanger, itemsAmounts, discoveredItems}) => {
+export const Items = ({stateChanger, itemsAmounts, discoveredItems, $shadowed}) => {
 
     return (
         <S.Items>
@@ -10,7 +10,8 @@ export const Items = ({stateChanger, itemsAmounts, discoveredItems}) => {
                                                              index={index}
                                                              key={index}
                                                              stateChanger={stateChanger}
-                                                             discoveredItems={discoveredItems}/>)}
+                                                             discoveredItems={discoveredItems}
+                                                             $shadowed={$shadowed}/>)}
         </S.Items>
     )
 }

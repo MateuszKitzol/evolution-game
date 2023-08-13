@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
 export const ButtonSection = styled.div`
-    height: 75px;
-    width: 150px;
+    height: 80px;
+    width: 80px;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -10,4 +10,5 @@ export const ButtonSection = styled.div`
     bottom: 10px; 
     right: 10px; 
     z-index: 5;
+    filter: blur(${(props) => props.$shadowed ? '1px' : '0px'});
 `;

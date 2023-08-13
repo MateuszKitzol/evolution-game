@@ -12,7 +12,7 @@ const initialPosition = { x: 0, y: 0 };
 
 
 
-export const Item = ({ name, stateChanger, index}) => {
+export const Item = ({ name, stateChanger, index, $shadowed}) => {
     const[triggered, setTriggered] = useState(false);
     const [position, setPosition] = useState(initialPosition);
 
@@ -52,11 +52,11 @@ export const Item = ({ name, stateChanger, index}) => {
     if(name != 'undiscovered'){
         return( 
             <Draggable onStop={onStopEventHandler} position={position} defaultPosition={initialPosition}>
-                <S.Item path={path} name={name} x={position.x} y={position.y}>
+                <S.Item path={path} name={name} x={position.x} y={position.y} $shadowed={$shadowed}> 
                     <DeleteIcon index={index} key={index} stateChanger={resetPosition}/>
                 </S.Item>
             </Draggable>);
     } else {
-        return <S.Item path={path} name={name}/>
+        return <S.Item path={path} name={name} $shadowed={$shadowed}/>
     }
 }

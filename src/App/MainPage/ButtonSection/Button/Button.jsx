@@ -5,11 +5,15 @@ export const getIconPath = (name) => {
     return `/public/icons/${name}.png`;
 };
 
-export const Button = ({name}) => {
+export const Button = ({name, stateChanger, $shadowed}) => {
 
     const path = getIconPath(name);
 
+    const onClickEventHandler = () => {
+        stateChanger(x => name);
+    }
+
     return (        
-        <S.Button path={path}/>
+        <S.Button path={path} onClick={onClickEventHandler} $shadowed={$shadowed}/>
     )
 }

@@ -12,6 +12,7 @@ export const Button = styled.div`
     width: 40px;
 
     &:hover {
-        cursor: pointer;
+        cursor: ${(props) => props.$shadowed ? 'default' : 'pointer'};
+        border: ${(props) => props.$shadowed ? '2px dashed white' : '2px solid white'};
     }
 `;
