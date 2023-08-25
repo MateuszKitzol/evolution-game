@@ -4,17 +4,28 @@ import Draggable from 'react-draggable';
 import { DeleteIcon } from './DeleteIcon/DeleteIcon.jsx';
 
 
-export const getImagePath = (name) => {
-    return `/public/itemsImages/${name}.jpg`;
-};
 
 const initialPosition = { x: 0, y: 0 };
 
 
 
+const pixelsToWindowsWidth = (x) => {
+   return (x/window.innerWidth);
+}
+
+const inSidebarArea = (x) => {
+    return pixelsToWindowsWidth(x) < 0.2; //To be honest 50 is here because of some weird position offset which has unknwn origin. 
+}
+
+export const getImagePath = (name) => {
+    return `/public/itemsImages/${name}.jpg`;
+};  
+
+
+
 export const Item = ({ name, stateChanger, index, $shadowed}) => {
     const[triggered, setTriggered] = useState(false);
-    const [position, setPosition] = useState(initialPosition);
+    const[position, setPosition] = useState(initialPosition);
 
     const path = getImagePath(name);
 
@@ -33,6 +44,11 @@ export const Item = ({ name, stateChanger, index, $shadowed}) => {
     };
 
     const onStopEventHandler = (event, data) => {
+        if(inSidebarArea(event.target.getBoundingClientRect().left)) {
+            setPosition(x => initialPosition);
+            return;
+        }
+
         setPosition(x => {return { x: data.x, y: data.y }});
 
         if(!triggered && name != 'undiscovered'){
