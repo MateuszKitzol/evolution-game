@@ -65,7 +65,7 @@ export const Item = ({ name, stateChanger, index, $shadowed}) => {
         }
     }
 
-    if(name != 'undiscovered'){
+    if(name != 'undiscovered' && !$shadowed){
         return( 
             <Draggable onStop={onStopEventHandler} position={position} defaultPosition={initialPosition}>
                 <S.Item path={path} name={name} x={position.x} y={position.y} $shadowed={$shadowed}> 
