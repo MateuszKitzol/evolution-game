@@ -13,7 +13,12 @@ export const MainPage = () => {
     const[discoveredItems, setDiscoveredItems] = useState(listOfItems.map(item => {return {name: item, 
                                                                                            discovered: listOfInitialItems.includes(item)}}));
     const[newDiscovery, setNewDiscovery] = useState(null);
-    const[windowVisible, setWindowVisible] = useState(false); 
+    const[windowVisible, setWindowVisible] = useState(false);
+    const[itemToBeDiscovered, setItemToBeDiscovered] = useState('carbon');
+    
+    useEffect(() => {
+        setItemToBeDiscovered(x => discoveredItems.find(x => !x.discovered).name);
+    }, [discoveredItems])
 
     return(
         <Fragment>
@@ -30,7 +35,8 @@ export const MainPage = () => {
                 {newDiscovery && <NewDiscoveryAlert name={newDiscovery}/>}
                 {windowVisible && <Window name={windowVisible}
                                           $shadowed={windowVisible}
-                                          stateChanger={setWindowVisible}/>}
+                                          stateChanger={setWindowVisible}
+                                          itemToBeDiscovered={itemToBeDiscovered}/>}
                 <ButtonSection stateChanger={setWindowVisible}
                                $shadowed={windowVisible}/>
             </S.MainPage>

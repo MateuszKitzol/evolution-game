@@ -6,6 +6,7 @@ export const ButtonSection = ({$shadowed, stateChanger}) => {
 
     return (        
         <S.ButtonSection $shadowed={$shadowed}>
+            <Button name='hint' stateChanger={stateChanger} $shadowed={$shadowed}/>
             <Button name='info' stateChanger={stateChanger} $shadowed={$shadowed}/>
         </S.ButtonSection>
     )

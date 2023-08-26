@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const ButtonSection = styled.div`
     height: 80px;
-    width: 80px;
+    width: 140px;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
