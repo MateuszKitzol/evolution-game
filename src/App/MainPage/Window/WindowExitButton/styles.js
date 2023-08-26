@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const WindowButton = styled.div`
+export const WindowExitButton = styled.div`
     background-color: #0A0A0A;
     border: 2px dashed white;
     border-radius: 7.5px;
@@ -12,7 +12,11 @@ export const WindowButton = styled.div`
     transform: translateX(-50%);
 
     &:hover {
+        background-color: purple;
         cursor: pointer;
+    }
+
+    &:active {
         border: 2px solid white;
     }
 

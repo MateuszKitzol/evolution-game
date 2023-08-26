@@ -1,15 +1,15 @@
 import React, { useState, UseContext, useEffect } from 'react';
 import * as S from './styles.js'
 
-export const WindowButton = ({text, stateChanger}) => {
+export const WindowExitButton = ({text, stateChanger}) => {
 
     const onClickEventHandler = () => {
         stateChanger(x => false);
     }
 
     return (        
-        <S.WindowButton onClick={onClickEventHandler}>
+        <S.WindowExitButton onClick={onClickEventHandler}>
             <div>{text}</div>
-        </S.WindowButton>
+        </S.WindowExitButton>
     )
 }
