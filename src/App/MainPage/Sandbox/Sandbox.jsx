@@ -33,9 +33,7 @@ export const Sandbox = ({discoveredItemsStateChanger, newDiscoveryStateChanger, 
             let discoveryName = discovery.item;
 
             if(!discoveredItems.indexOf(discoveryName).discovered){
-                console.log(composition);
 
-                console.log('x');
                 discoveredItemsStateChanger(discoveries =>
                     discoveries.map(obj => {
                         if(obj.name === discoveryName){
@@ -51,7 +49,7 @@ export const Sandbox = ({discoveredItemsStateChanger, newDiscoveryStateChanger, 
     }, [composition]);
 
     useEffect(() => {
-        setComposition(x => itemsAmountsToRecipeArr(itemsAmounts)); 
+        setComposition(x => itemsAmountsToRecipeArr(itemsAmounts));
     }, [itemsAmounts]);
 
     return(

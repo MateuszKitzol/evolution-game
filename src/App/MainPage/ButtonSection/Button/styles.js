@@ -14,7 +14,6 @@ export const Button = styled.div`
     &:hover {
         cursor: ${(props) => props.$shadowed ? 'default' : 'pointer'};
         background-color: purple;
-        //border: ${(props) => props.$shadowed ? '2px dashed white' : '2px solid white'};
     }
 
     &:active {
