@@ -23,29 +23,39 @@ export const getImagePath = (name) => {
 
 
 
-export const Item = ({ name, stateChanger, index, $shadowed}) => {
+export const Item = ({ name, stateChanger, index, $shadowed, $resetPositions, resetPositionsStateChanger}) => {
     const[triggered, setTriggered] = useState(false);
     const[position, setPosition] = useState(initialPosition);
 
     const path = getImagePath(name);
 
-    const resetPosition = () => {
+    useEffect(() => {
+        if($resetPositions){
+            resetPosition('clearButton');
+            resetPositionsStateChanger(x => false);
+        }
+    }, [$resetPositions])
+
+    const resetPosition = (trigger) => {
         setTriggered(x => false);
         setPosition(x => initialPosition);
 
-        stateChanger((list) => {
-            const indexToChange = list.findIndex(x => x.name == name);
-            return list.map((obj, index) => {
-                if(index === parseInt(indexToChange))
-                    return {...obj, amount: obj.amount-1};
-                return obj;
-            })
-        });
+        if(trigger != 'clearButton'){
+            stateChanger((list) => {
+                const indexToChange = list.findIndex(x => x.name == name);
+                return list.map((obj, index) => {
+                    if(index === parseInt(indexToChange))
+                        return {...obj, amount: obj.amount-1};
+                    return obj;
+                })
+            });
+        }
     };
 
     const onStopEventHandler = (event, data) => {
+
         if(inSidebarArea(event.target.getBoundingClientRect().left)) {
-            setPosition(x => initialPosition);
+            setPosition(x => initialPosition);  
             return;
         }
 
@@ -53,17 +63,21 @@ export const Item = ({ name, stateChanger, index, $shadowed}) => {
 
         if(!triggered && name != 'undiscovered'){
             setTriggered(x => true);
-
+            console.log('xxxx');
             stateChanger((list) => {
                 const indexToChange = list.findIndex(x => x.name == name);
+                console.log(list);
                 return list.map((obj, index) => {
-                    if(index === parseInt(indexToChange))
+                    if(index === parseInt(indexToChange)){
                         return {...obj, amount: obj.amount+1};
+                    }
                     return obj;
                 })
             });
         }
     }
+
+    
 
     if(name != 'undiscovered' && !$shadowed){
         return( 

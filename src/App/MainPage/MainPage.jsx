@@ -15,10 +15,17 @@ export const MainPage = () => {
     const[newDiscovery, setNewDiscovery] = useState(null);
     const[windowVisible, setWindowVisible] = useState(false);
     const[itemToBeDiscovered, setItemToBeDiscovered] = useState('carbon');
+    const[resetPositions, setResetPositions] = useState(false);
     
     useEffect(() => {
         setItemToBeDiscovered(x => discoveredItems.find(x => !x.discovered).name);
     }, [discoveredItems])
+
+    useEffect(() => {
+        console.log(itemsAmounts);
+        if(itemsAmounts.every(x => x.amount == 0))
+            setResetPositions(x => true);
+    }, [itemsAmounts])
 
     return(
         <Fragment>
@@ -26,18 +33,23 @@ export const MainPage = () => {
                 <Sidebar stateChanger={setItemsAmounts} 
                          itemsAmounts={itemsAmounts}
                          discoveredItems={discoveredItems}
-                         $shadowed={windowVisible}/>
+                         $shadowed={windowVisible}
+                         $resetPositions={resetPositions}
+                         resetPositionsStateChanger={setResetPositions}/>
                 <Sandbox discoveredItemsStateChanger={setDiscoveredItems} 
                          itemsAmounts={itemsAmounts} 
                          discoveredItems={discoveredItems} 
                          newDiscoveryStateChanger={setNewDiscovery}
-                         $shadowed={windowVisible}/>
-                {newDiscovery && <NewDiscoveryAlert name={newDiscovery}/>}
+                         $shadowed={windowVisible}
+                         />
+                {newDiscovery && <NewDiscoveryAlert name={newDiscovery}
+                                                    itemsAmountsStateChanger={setItemsAmounts}/>}
                 {windowVisible && <Window name={windowVisible}
                                           $shadowed={windowVisible}
                                           stateChanger={setWindowVisible}
                                           itemToBeDiscovered={itemToBeDiscovered}/>}
                 <ButtonSection stateChanger={setWindowVisible}
+                               itemsAmountsStateChanger={setItemsAmounts}
                                $shadowed={windowVisible}/>
             </S.MainPage>
         </Fragment>

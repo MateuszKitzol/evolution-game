@@ -15,14 +15,17 @@ export const Window = ({name, stateChanger, itemToBeDiscovered}) => {
                 <p>{gameRulesMainText}</p>
                 <WindowExitButton text={'Get back to game'} stateChanger={stateChanger}/>
             </>
-            : 
+            : 'hint' ?
             <>
                 <h2>Hint:</h2>
                 {hints[itemToBeDiscovered].map(x => <><span>{x}</span><br/></>)}
                 <br/>
                 <WindowSolutionButton text={'Get solution'} item={itemToBeDiscovered}/>
                 <WindowExitButton text={'Get back to game'} stateChanger={stateChanger}/>
-            </>}
+            </>
+            :
+            <></>
+            }
         </S.Window>
     )
 }
