@@ -23,6 +23,11 @@ export const Window = styled.div`
         height: 6vh;
     }
 
+    h3 {
+        font-size: 3vh;
+        height: 4vh;
+    }
+
     p {
         display: inline;
     }

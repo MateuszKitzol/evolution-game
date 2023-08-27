@@ -7,6 +7,7 @@ export const ButtonSection = ({$shadowed, stateChanger, itemsAmountsStateChanger
     return (        
         <S.ButtonSection $shadowed={$shadowed}>
             <Button name='clear' stateChanger={stateChanger} itemsAmountsStateChanger={itemsAmountsStateChanger} $shadowed={$shadowed}/>
+            <Button name='sources' stateChanger={stateChanger} itemsAmountsStateChanger={itemsAmountsStateChanger} $shadowed={$shadowed}/>
             <Button name='hint' stateChanger={stateChanger} itemsAmountsStateChanger={itemsAmountsStateChanger} $shadowed={$shadowed}/>
             <Button name='info' stateChanger={stateChanger} itemsAmountsStateChanger={itemsAmountsStateChanger} $shadowed={$shadowed}/>
         </S.ButtonSection>
