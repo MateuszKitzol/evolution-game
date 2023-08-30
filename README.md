@@ -10,4 +10,4 @@ You start with 3 elementary particles: electron, neutron and proton. The aim of 
 
 React + Vite, React Draggable, styled-components (css library)
 
-###### *Thank you in advance for playing my game. Let me know if you have any suggestions how to improve tha game.*
+##### *Thank you in advance for playing my game. Let me know if you have any suggestions how to improve tha game.*
