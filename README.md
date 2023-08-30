@@ -1,6 +1,6 @@
 # Evolution Game
 
-### Simple website game in which your goal is to create life.
+Simple website game in which your goal is to create life.
 
 ## Rules:
 
