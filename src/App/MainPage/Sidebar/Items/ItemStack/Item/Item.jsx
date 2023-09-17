@@ -18,7 +18,7 @@ const inSidebarArea = (x) => {
 }
 
 export const getImagePath = (name) => {
-    return `public/itemsImages/${name}.jpg`;
+    return `evolution-game/public/itemsImages/${name}.jpg`;
 };  
 
 
