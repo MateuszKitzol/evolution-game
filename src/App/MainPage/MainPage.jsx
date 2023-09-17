@@ -3,7 +3,7 @@ import { Sidebar } from './Sidebar/Sidebar.jsx';
 import { Sandbox } from './Sandbox/Sandbox.jsx';
 import * as S from './styles';
 import { listOfItems, listOfInitialItems } from '../../../public/listOfItems.js';
-import { NewDiscoveryAlert } from './NewDiscoveryAlert/newDiscoveryAlert.jsx';
+import { NewDiscoveryAlert } from './NewDiscoveryAlert/NewDiscoveryAlert.jsx';
 import { ButtonSection } from './ButtonSection/ButtonSection.jsx';
 import { Window } from './Window/Window.jsx';
 
