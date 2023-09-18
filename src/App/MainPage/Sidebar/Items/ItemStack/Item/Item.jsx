@@ -18,7 +18,8 @@ const inSidebarArea = (x) => {
 }
 
 export const getImagePath = (name) => {
-    return `/public/items/${name}.jpg`;
+    return `/docs/assets/images/${name}.jpg`;
+    
 };  
 
 
