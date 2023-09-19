@@ -1,8 +1,10 @@
 import styled from 'styled-components';
 import { DeleteIcon } from './DeleteIcon/styles';
+import Image from '../../../../../../../public/items/adenine.jpg';
 
 export const Item = styled.div`
-    background: url(${(props) => props.path});
+    //background: url(${(props) => props.path});
+    background: url(${Image});
     background-size: contain; 
     border: 3px solid purple;
     border-radius: 5px;
