@@ -2,11 +2,12 @@ import React, { UseContext, useEffect, useState } from 'react';
 import * as S from './styles';
 import Draggable from 'react-draggable';
 import { DeleteIcon } from './DeleteIcon/DeleteIcon.jsx';
+import { lazy } from "react";
 
 
 
 const initialPosition = { x: 0, y: 0 };
-
+export let itemName = '';
 
 
 const pixelsToWindowsWidth = (x) => {
@@ -19,7 +20,6 @@ const inSidebarArea = (x) => {
 
 export const getImagePath = (name) => {
     return `../../../../../../../public/items/${name}.jpg`;
-
 };  
 
 
@@ -79,7 +79,6 @@ export const Item = ({ name, stateChanger, index, $shadowed, $resetPositions, re
     }
 
     
-
     if(name != 'undiscovered' && !$shadowed){
         return( 
             <Draggable onStop={onStopEventHandler} position={position} defaultPosition={initialPosition}>
