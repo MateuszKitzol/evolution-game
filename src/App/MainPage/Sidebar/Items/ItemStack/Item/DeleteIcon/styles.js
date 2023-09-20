@@ -1,7 +1,8 @@
 import styled from 'styled-components';
+import deleteIcon from '../../../../../../../../public/icons/close.png';
 
 export const DeleteIcon = styled.div`
-    background: url(${(props) => props.path});
+    background: url(${deleteIcon});
     background-color: white;
     background-size: contain;
     border: 2px solid purple;
