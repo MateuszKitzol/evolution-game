@@ -1,7 +1,13 @@
 import styled from 'styled-components';
+import clear from '../../../../../public/icons/clear.png';
+import key from '../../../../../public/icons/key.png';
+import hint from '../../../../../public/icons/hint.png';
+import info from '../../../../../public/icons/info.png';
+import close from '../../../../../public/icons/close.png';
+import sources from '../../../../../public/icons/sources.png';
 
 export const Button = styled.div`
-    background: url(${(props) => props.path});
+    background: url(${(props) => eval(props.name)});
     background-color: black;
     background-size: 80% 80%;
     background-position: center;

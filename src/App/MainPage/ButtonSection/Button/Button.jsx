@@ -1,13 +1,9 @@
 import React, { useState, UseContext, useEffect } from 'react';
 import * as S from './styles.js'
 
-export const getIconPath = (name) => {
-    return `/public/icons/${name}.png`;
-};
+
 
 export const Button = ({name, stateChanger, itemsAmountsStateChanger, $shadowed}) => {
-
-    const path = getIconPath(name);
 
     const onClickEventHandler = () => {
         if(name != 'clear')
@@ -17,6 +13,6 @@ export const Button = ({name, stateChanger, itemsAmountsStateChanger, $shadowed}
     }
 
     return (        
-        <S.Button path={path} onClick={onClickEventHandler} $shadowed={$shadowed}/>
+        <S.Button name={name} onClick={onClickEventHandler} $shadowed={$shadowed}/>
     )
 }
