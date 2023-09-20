@@ -1,13 +1,25 @@
 import styled from 'styled-components';
-import clear from '../../../../../public/icons/clear.png';
-import key from '../../../../../public/icons/key.png';
-import hint from '../../../../../public/icons/hint.png';
-import info from '../../../../../public/icons/info.png';
-import close from '../../../../../public/icons/close.png';
-import sources from '../../../../../public/icons/sources.png';
+import clearImage from '../../../../../public/icons/clear.png';
+import keyImage from '../../../../../public/icons/key.png';
+import hintImage from '../../../../../public/icons/hint.png';
+import infoImage from '../../../../../public/icons/info.png';
+import closeImage from '../../../../../public/icons/close.png';
+import sourcesImage from '../../../../../public/icons/sources.png';
+
+
+
+const importedImages = {
+    clear: clearImage,
+    key: keyImage,
+    hint: hintImage,
+    info: infoImage,
+    close: closeImage,
+    sources: sourcesImage
+};
+
 
 export const Button = styled.div`
-    background: url(${(props) => eval(props.name)});
+    background: url(${(props) => importedImages[props.name]});
     background-color: black;
     background-size: 80% 80%;
     background-position: center;
