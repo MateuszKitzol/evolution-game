@@ -2,7 +2,7 @@ import React, { UseContext } from 'react';
 import { Items } from './Items/Items.jsx';
 import * as S from './styles';
 
-export const Sidebar = ({stateChanger, itemsAmounts, discoveredItems, $shadowed, $resetPositions, resetPositionsStateChanger}) => {
+export const Sidebar = ({stateChanger, itemsAmounts, discoveredItems, $shadowed, $resetPositions, resetPositionsStateChanger    }) => {
 
     return(
         <S.Sidebar $shadowed={$shadowed}>
