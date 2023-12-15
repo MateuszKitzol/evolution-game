@@ -9,6 +9,7 @@ export const WindowSolutionButton = styled(Button)`
     &:hover {      
         animation-name: widthAnimation;
         animation-duration: 1000ms;
+        animation-delay: -500ms;
         animation-fill-mode: forwards;
 
         background: none;
