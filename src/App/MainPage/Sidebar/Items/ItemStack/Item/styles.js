@@ -81,8 +81,8 @@ export const Item = styled.div`
         position: absolute;
         margin: 15px;
         z-index: 100;
-        visibility: ${(props) => props.name == "proton" ? 'visible' : 'hidden'};
-        ${(props) => props.name === 'proton' && `
+        visibility: ${(props) => props.name == "proton" && props.x == 0 && props.y == 0 && props.discovered_number == 3 ? 'visible' : 'hidden'};
+        ${(props) => props.name === 'proton' && props.x == 0 && props.y == 0 && props.discovered_number == 3 && `
             opacity: 1;
             transition: all 2s ease 2s;
             left: 0;
