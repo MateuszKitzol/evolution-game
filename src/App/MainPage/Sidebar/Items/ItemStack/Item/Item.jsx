@@ -18,7 +18,7 @@ const inSidebarArea = (x) => {
 
 
 
-export const Item = ({ name, stateChanger, index, $shadowed, $resetPositions, resetPositionsStateChanger}) => {
+export const Item = ({ name, stateChanger, discoveredItems, index, $shadowed, $resetPositions, resetPositionsStateChanger}) => {
     const[triggered, setTriggered] = useState(false);
     const[position, setPosition] = useState(initialPosition);
 
@@ -70,11 +70,10 @@ export const Item = ({ name, stateChanger, index, $shadowed, $resetPositions, re
         }
     }
 
-    
     if(name != 'undiscovered' && !$shadowed){
         return( 
             <Draggable onStop={onStopEventHandler} position={position} defaultPosition={initialPosition}>
-                <S.Item name={name} x={position.x} y={position.y} $shadowed={$shadowed}> 
+                <S.Item name={name} x={position.x} y={position.y} discovered_number={discoveredItems.filter(x => x.discovered).length} $shadowed={$shadowed}> 
                     <DeleteIcon index={index} key={index} stateChanger={resetPosition}/>
                 </S.Item>
             </Draggable>);

@@ -9,6 +9,7 @@ export const ItemStack = ({name, stateChanger, discoveredItems, $shadowed, $rese
             {Array.from(Array(20).keys()).map((index) => <Item key={name + index}
                                                                index={name + index}
                                                                name={name}
+                                                               discoveredItems={discoveredItems}
                                                                stateChanger={stateChanger}
                                                                $shadowed={$shadowed}
                                                                $resetPositions={$resetPositions}
